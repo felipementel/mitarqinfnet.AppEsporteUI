@@ -17,21 +17,15 @@
 </head>
 <body>
 
-	Lista de usuários
+	Lista de bicicletas
 	<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 			<p class="bg-warning">
-				<c:forEach var="cliente" items="${clientelista}">
+				<c:forEach var="bicicleta" items="${bicicletas}">
 					<h4>
-					ID: ${cliente.id} <br>
-					Nome: ${cliente.nome} <br>
-					Data de cadastro ${cliente.datacadastro} <br>
-					DDD e Telefone (${cliente.ddd})-${cliente.telefone} <br>
-					Email: ${cliente.email} <br>
-					Ativo: ${cliente.isativo} <br>
-						<a href="/cliente/excluir/${cliente.id}">Excluir</a>
-						<%-- <a href="/cliente/editar/${cliente.id}">Editar</a> --%>
+						${bicicleta} <br> <a
+							href="/produtos/bicicleta/excluir/${bicicleta.id}">Excluir</a>
 					</h4>
 				</c:forEach>
 			</p>
@@ -39,11 +33,12 @@
 		<div class="col-sm-4"></div>
 	</div>
 	<p class="bg-success">
-		<a href="/cliente/cadastro">Cadastro de clientes</a>
+		<a href="/produtos/bicicleta/cadastro">Cadastro de bicicletas</a>
 	</p>
 
+	<br>
 	<form action="/home" method="post">
-		<br> <input type="submit" value="Home" class="btn btn-warning"><br>
+		<input type="submit" value="Home" class="btn btn-warning"><br>
 	</form>
 </body>
 </html>

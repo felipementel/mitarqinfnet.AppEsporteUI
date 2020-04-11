@@ -14,23 +14,21 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form action="/clientecadastro" method="post">
+	<form action="/produtos/skate/cadastro" method="post">
 	<br>
-	<h2>Cadastro de clientes</h2>
+	<h2>Cadastro de Skates</h2>
 	<br>
 	<br>
 		<div class="row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
-				<span><input type="text" name="nome" maxlength="200"
-					class="form-control" placeholder="Nome"><br></span> <span><input
-					type="text" name="ddd" maxlength="2" class="form-control"
-					placeholder="DDD"></span><br> <span><input type="text"
-					name="telefone" class="form-control" placeholder="Telefone"
-					maxlength="11"></span><br> <span><input type="text"
-					name="email" maxlength="300" class="form-control"
-					placeholder="Email"></span><br> <br> <span> <input
-					type="submit" value="Cadastrar" class="btn btn-primary"></span><br>
+				<span><input type="text" name="descricao" maxlength="200"class="form-control" placeholder="Descrição"></span><br>
+				<span><input type="text" name="materialshape" maxlength="200" class="form-control" placeholder="Material Shape"></span><br>
+				<span><input type="text" name="tamanhoshape" class="form-control" placeholder="Tamanho Shape" maxlength="4"></span><br>
+				<span><input type="text" name="fabricante" maxlength="3" class="form-control" placeholder="Fabricante"></span><br>
+				<span><input type="text" name="preco" maxlength="10" class="form-control" placeholder="Preço"></span>
+				<br> <br> 
+				<span><input type="submit" value="Cadastrar" class="btn btn-primary"></span><br>
 			</div>
 			<div class="col-sm-4"></div>
 		</div>

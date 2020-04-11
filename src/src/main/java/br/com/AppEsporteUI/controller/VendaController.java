@@ -42,6 +42,13 @@ public class VendaController {
 	@Autowired
 	private BodyboardService serviceBodyboard;
 
+	/*
+	 * @RequestMapping(value = "/home", method = RequestMethod.POST) public String
+	 * showHome2() {
+	 * 
+	 * return "home"; }
+	 */
+
 	@RequestMapping(value = "/venda/vender", method = RequestMethod.GET)
 	public String showVenda(Model model) {
 
@@ -58,7 +65,6 @@ public class VendaController {
 
 		Optional<Cliente> _cliente = serviceCliente.obterPorId(venda.getCliente().getId());
 
-
 		venda.setDatavenda(new Date());
 		venda.setNomeloja("Uruguaiana");
 		venda.setCliente(_cliente.get());
@@ -70,7 +76,7 @@ public class VendaController {
 		ItemVenda _itemVendaSkate = new ItemVenda();
 		_itemVendaSkate.setDescricao("Descricao do Item Venda do Skate");
 		_itemVendaSkate.setProduto(_skate.get());
-		
+
 		ItemVenda _itemVendaBicicleta = new ItemVenda();
 		_itemVendaBicicleta.setDescricao("Descricao do Item Venda do Bicicleta");
 		_itemVendaBicicleta.setProduto(_bicicleta.get());
@@ -85,7 +91,7 @@ public class VendaController {
 		_itensVendidos.add(_itemVendaBodyboard);
 
 		venda.setItensvenda(_itensVendidos);
-		
+
 		serviceVenda.incluir(venda);
 
 		return showVendaLista(model);
@@ -100,12 +106,12 @@ public class VendaController {
 
 		return "venda/lista";
 	}
-	
+
 	@RequestMapping(value = "/venda/excluir/{id}", method = RequestMethod.GET)
 	public String excluir(Model model, @PathVariable Integer id) {
-		
+
 		serviceVenda.excluir(id);
-		
+
 		return this.showVendaLista(model);
 	}
 }

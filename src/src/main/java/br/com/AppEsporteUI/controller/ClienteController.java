@@ -52,6 +52,12 @@ public class ClienteController {
 		return "home";
 	}
 
+	@RequestMapping(value = "/home", method = RequestMethod.POST)
+	public String showHome() {
+
+		return "home";
+	}
+
 	@RequestMapping(value = "/cliente/cadastro", method = RequestMethod.GET)
 	public String showDetalhe() {
 		return "cliente/cadastro";
@@ -69,7 +75,7 @@ public class ClienteController {
 	public String obterLista(Model model) {
 
 		List<Cliente> lCliente = service.obterLista();
-
+		
 		model.addAttribute("clientelista", lCliente);
 
 		return "cliente/lista";
@@ -82,7 +88,7 @@ public class ClienteController {
 
 		return this.obterLista(model);
 	}
-
+	
 	@RequestMapping(value = "/cliente/editar/{id}", method = RequestMethod.GET)
 	public String editar(Model model, @PathVariable Integer id) {
 
